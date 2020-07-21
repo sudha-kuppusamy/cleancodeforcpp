@@ -6,7 +6,7 @@ bool vitalsAreOk(T var)
 {
   if (var < 80) 
     return false;
-  else if (var > 60)
+  else if (var > 150)
     return false;
   else
     return true;
