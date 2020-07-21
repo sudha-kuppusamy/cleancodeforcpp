@@ -9,7 +9,7 @@ static bool compare(float param, float minValue, float maxValue)
 
 static bool compare(float param, float minValue)
 {
-  return (param < minValue)
+  return (param < minValue);
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
