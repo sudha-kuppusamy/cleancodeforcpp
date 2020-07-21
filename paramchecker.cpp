@@ -23,7 +23,7 @@ bool vitalsAreOk(T var)
 template<typename T, typename... Args>
 bool vitalsAreOk(T var1, Args... var2) {
   if(vitalAreOk(var1)  ) 
-    return vitalAreOk(var2...);
+    return vitalsAreOk(var2...);
   else
     return false;
 }
