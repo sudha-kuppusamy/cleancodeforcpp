@@ -13,15 +13,8 @@ static bool compare(float param, float minValue)
 }
 
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  bool ret;
-  ret = compare(bpm, 70, 150);
-  if(!ret) return ret;
-  
-  ret = compare (spo2, 80);
-  if(!ret) return ret;
-  
-  ret = compare(respRate, 30, 60);
-  if(!ret) return ret;
-  
-   return ret;
+  if(compare(bpm, 70, 150) || compare (spo2, 80) || compare(respRate, 30, 60))
+    return true;
+  else
+   return false;
 }
