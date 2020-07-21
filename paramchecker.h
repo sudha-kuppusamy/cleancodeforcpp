@@ -4,7 +4,9 @@
 template<typename T>
 bool vitalsAreOk(T var)
 {
-  if ((var < 80) || (var > 60))
+  if (var < 80) 
+    return false;
+  else if (var > 60))
     return false;
   else
     return true;
