@@ -26,15 +26,16 @@ bool vitalsAreOk(T var)
     case 1: 
       ret = compareVitals(var, 70, 150); //bpm
       break;
-  case 2:
+    case 2:
       ret = compareVitals(var, 80);     //spo2
       break;
-  case 3:
+    case 3:
       ret = compareVitals(var, 30, 60); //respRate
       break;
     default:
       printf("parameter count is exceeded than expected\n");
       break;
+  }
       
     paramCount++;
     return ret;
