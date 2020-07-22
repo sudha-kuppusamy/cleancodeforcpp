@@ -1,4 +1,4 @@
-std::map < std::string, <float, float>) vitalsList =
+std::map < std::string, <float, float>> vitalsList =
 {
   {"bpm", {70, 150}},
   {"spo2", {80, 100}},
