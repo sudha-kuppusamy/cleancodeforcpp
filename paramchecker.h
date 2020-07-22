@@ -1,20 +1,48 @@
 
 //bool vitalsAreOk(float bpm, float spo2, float respRate);
 
+static int paramCount=1;
+bool compareVitals(T var, T minVal, T maxVal)
+{
+  if((var < minVal) || (var > maxVal)
+     return false;
+   else
+     return true;
+}
+     
+bool compareVitals(T var, T Val)
+{
+  if(var < minVal)
+     return false;
+   else
+     return true;
+}
 template<typename T>
 bool vitalsAreOk(T var)
 {
-  if (var < 80) 
-    return false;
-  else if (var > 150)
-    return false;
-  else
-    return true;
+  bool ret;
+  switch(paramCount)
+  {
+    case 1: 
+      ret = compareVitals(var, 70, 150); //bpm
+      break;
+  case 2:
+      ret = compareVitals(var, 80);     //spo2
+      break;
+  case 3:
+      ret = compareVitals(var, 30, 60); //respRate
+      break;
+    default:
+      printf("parameter count is exceeded than expected\n");
+      break;
+      
+    paramCount++;
+    return ret;
 }
 template<typename T, typename... Args>
 bool vitalsAreOk(T var1, Args... var2) {
-  if(vitalsAreOk(var1)  ) 
-    return vitalsAreOk(var2...);
+  if(vitalsAreOk(var1) && vitalsAreOk(var2...))
+    return true;
   else
     return false;
 }
