@@ -8,6 +8,10 @@ TEST(VitalsTest, BPM) {
 TEST(VitalsTest, SPO2) {
     ASSERT_EQ(false, vitalsAreOk(100, 40, 50));
 }
+
+TEST(VitalsTest, BPM) {
+    ASSERT_EQ(false, vitalsAreOk(90, 70, 50, 100));
+}
  
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
