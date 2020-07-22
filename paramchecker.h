@@ -1,24 +1,7 @@
 
 //bool vitalsAreOk(float bpm, float spo2, float respRate);
-static bool compareVitals(T var, T minVal, T maxVal);
-static bool bool compareVitals(T var, T Val);
 
 static int paramCount=1;
-bool compareVitals(T var, T minVal, T maxVal)
-{
-  if((var < minVal) || (var > maxVal)
-     return false;
-   else
-     return true;
-}
-     
-bool compareVitals(T var, T Val)
-{
-  if(var < minVal)
-     return false;
-   else
-     return true;
-}
 template<typename T>
 bool vitalsAreOk(T var)
 {
@@ -26,13 +9,13 @@ bool vitalsAreOk(T var)
   switch(paramCount)
   {
     case 1: 
-      ret = compareVitals(var, 70, 150); //bpm
+      ret = ((var < 70) || (var > 150)) ? true : false; //bpm
       break;
     case 2:
-      ret = compareVitals(var, 80);     //spo2
+      ret = (var < 80) ? true : false;     //spo2
       break;
     case 3:
-      ret = compareVitals(var, 30, 60); //respRate
+      ret = ((var < 30) || (var > 60)) ? true : false; //respRate
       break;
     default:
       // parameter count is exceeded than expected, not sure how to handle
