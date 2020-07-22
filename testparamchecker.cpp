@@ -9,7 +9,7 @@ TEST(VitalsTest, SPO2) {
     ASSERT_EQ(false, vitalsAreOk(100, 40, 50));
 }
 
-TEST(VitalsTest, BPM) {
+TEST(VitalsTest, Resp) {
     ASSERT_EQ(false, vitalsAreOk(90, 70, 50, 100));
 }
  
