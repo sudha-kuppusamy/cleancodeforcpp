@@ -1,5 +1,7 @@
 
 //bool vitalsAreOk(float bpm, float spo2, float respRate);
+static bool compareVitals(T var, T minVal, T maxVal);
+static bool bool compareVitals(T var, T Val);
 
 static int paramCount=1;
 bool compareVitals(T var, T minVal, T maxVal)
@@ -33,7 +35,7 @@ bool vitalsAreOk(T var)
       ret = compareVitals(var, 30, 60); //respRate
       break;
     default:
-      printf("parameter count is exceeded than expected\n");
+      // parameter count is exceeded than expected, not sure how to handle
       break;
   }
       
